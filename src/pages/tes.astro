@@ -1,0 +1,129 @@
+---
+const milestones = [
+	{ year: '1887', title: 'A workshop by the river', text: 'Mara Ellery opens a small brass-and-wood instrument shop beside the Calder Canal. The first ledger lists three employees, one borrowed lathe, and a promise to repair what others would replace.' },
+	{ year: '1912', title: 'The first factory', text: 'The workshop moves into a brick mill on Foundry Street. Ellery & Company begins making dependable measuring instruments for railways, schools, and local makers.' },
+	{ year: '1946', title: 'A new generation', text: 'After the war, precision skills turn toward household tools. A staff library and paid apprenticeships become part of the firm’s working life.' },
+	{ year: '1978', title: 'Beyond the factory gates', text: 'A regional network of repair counters and independent dealers brings the company’s products to a wider public—and keeps repairs close to home.' },
+	{ year: '2000', title: 'Looking forward', text: 'A century closes with the same practical ambition: make useful things carefully, share knowledge freely, and leave room for the next generation.' },
+];
+
+const principles = [
+	{ title: 'Useful by design', text: 'Begin with a real need. Make the answer clear, durable, and easy to maintain.' },
+	{ title: 'People make the work', text: 'Craft, curiosity, and fair opportunity have shaped the business from its earliest days.' },
+	{ title: 'Built to be repaired', text: 'A long life is better than a quick replacement. Keep parts in circulation and knowledge in reach.' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="The history, people, and principles of Ellery & Company, 1887–2000." />
+		<title>The Ellery Chronicle — Company Record</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="view-controls" role="group" aria-label="Choose layout">
+			<span>LAYOUT</span>
+			<button type="button" data-layout="page" aria-pressed="true">Page-like</button>
+			<button type="button" data-layout="full" aria-pressed="false">Full screen</button>
+		</div>
+		<div class="paper">
+			<div class="utility"><span>AN INDEPENDENT COMPANY RECORD</span><span>VOL. I · NO. 01</span><span>EST. 1887 · ARCHIVE EDITION</span></div>
+			<header class="masthead" id="top">
+				<p class="eyebrow">A living history of work, invention &amp; people</p>
+				<a class="wordmark" href="#top">The Ellery Chronicle</a>
+				<p class="masthead-note">THE STORY OF ELLERY &amp; COMPANY, 1887—2000</p>
+			</header>
+			<nav class="nav" aria-label="Main navigation">
+				<a href="#story">Our story</a><a href="#timeline">The years</a><a href="#principles">Principles</a><a href="#record">Company record</a><a href="#contact">Correspondence</a>
+			</nav>
+
+			<main>
+				<div class="edition-line"><span>THE ARCHIVE ISSUE</span><span>AN ILLUSTRATED COMPANY BIOGRAPHY</span><span>PRICE: ONE GOOD QUESTION</span></div>
+				<section class="lead-grid" id="story">
+					<article class="lead-copy">
+						<p class="kicker">From a riverside workshop to a century of useful things</p>
+						<h1>Made with care.<br /><em>Kept with purpose.</em></h1>
+						<p class="dek">One small shop. Five generations of changing tools. A company shaped less by a single invention than by the people who kept asking, “Can we make it better?”</p>
+						<div class="byline"><span>BY THE ELLERY ARCHIVE DESK</span><span>ILLUSTRATED COMPANY HISTORY</span></div>
+						<p class="body-copy">In 1887, Mara Ellery rented a narrow room near the Calder Canal and set a brass sign above its door. She repaired instruments for millwrights and mapmakers. The work was exacting; the promise was simple: make it well, explain how it works, and stand behind it.</p>
+						<p class="body-copy">That promise followed the business through a new factory, two world wars, a changing marketplace, and the arrival of the new millennium. This is not a story of uninterrupted triumph. It is a record of experiments, hard lessons, and everyday craft—told through the people and decisions that made Ellery &amp; Company.</p>
+						<a class="read-link" href="#timeline">Continue through the years <span>→</span></a>
+					</article>
+					<aside class="lead-rail" aria-label="Advertisement and archive note">
+						<div class="ad ad-tall"><span class="ad-label">A WORD FROM OUR SPONSORS</span><p class="ornament">✳</p><h2>THE CALDER<br />READING ROOM</h2><p>Good books, warm lamps, and a chair that knows your name.</p><a href="#contact">VISIT THE READING ROOM ↗</a><small>OPEN DAILY · EST. 1896</small></div>
+						<div class="archive-note"><span class="stamp">ARCHIVE<br />NOTE Nº 1</span><p>Dates and details are drawn from company ledgers, letters, and oral histories.</p></div>
+					</aside>
+				</section>
+
+				<section class="ticker" aria-label="Company facts"><div><strong>1887</strong><span>FOUNDED</span></div><div><strong>5</strong><span>GENERATIONS</span></div><div><strong>113</strong><span>YEARS IN THIS RECORD</span></div><div><strong>1</strong><span>GUIDING IDEA: MAKE IT LAST</span></div></section>
+
+				<section class="timeline-section" id="timeline">
+					<div class="section-heading"><span>THE COMPANY, IN BRIEF</span><h2>A century in the making</h2><p>Five moments from a much longer story.</p></div>
+					<div class="timeline-layout">
+						<div class="timeline-list">{milestones.map((item, index) => <article class="milestone"><div class="year">{item.year}<span>{String(index + 1).padStart(2, '0')}</span></div><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div>
+						<aside class="side-ads" aria-label="Period-style advertisements">
+							<div class="ad ad-box"><span class="ad-label">ADVERTISEMENT</span><h3>THE NORTH STAR<br /><em>POCKET COMPASS</em></h3><p>For finding your way there—and back again.</p><div class="compass" aria-hidden="true">N<br /><span>✦</span><br />S</div><a href="#record">SEE THE FIELD KIT →</a><small>PRECISION SINCE 1904</small></div>
+							<div class="quote-ad"><span class="ad-label">A NOTE FROM THE TYPE SHOP</span><p>“A letter is a small thing with a long journey.”</p><small>— J. BELL, COMPOSITOR · 1931</small></div>
+						</aside>
+					</div>
+				</section>
+
+				<section class="principles" id="principles">
+					<div class="section-heading light-heading"><span>WHAT WE CARRY FORWARD</span><h2>Our working principles</h2></div>
+					<div class="principle-grid">{principles.map((item, index) => <article><span class="principle-number">0{index + 1} /</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+				</section>
+
+				<section class="record-grid" id="record">
+					<article class="record-copy"><p class="kicker">The particulars</p><h2>A company is more<br /><em>than its products.</em></h2><p class="body-copy">Ellery &amp; Company is a privately held maker and repair business founded in 1887 in Calder, England. Across its history, the firm has worked in precision instruments, practical household tools, and technical education. Its archive preserves product drawings, staff publications, correspondence, and the stories of the people behind the work.</p><a class="read-link" href="#contact">Ask the archive a question <span>→</span></a></article>
+					<aside class="record-card"><span class="ad-label">COMPANY RECORD · 2000</span><dl><div><dt>Founded</dt><dd>1887, Calder</dd></div><div><dt>Founder</dt><dd>Mara Ellery</dd></div><div><dt>First trade</dt><dd>Instrument repair</dd></div><div><dt>Known for</dt><dd>Useful, repairable tools</dd></div><div><dt>Archive</dt><dd>Calder Works, Box 14</dd></div></dl><div class="seal" aria-label="Ellery and Company seal">E<br /><span>&amp;</span><br />C</div></aside>
+				</section>
+
+				<section class="bottom-ad" aria-label="Repair service advertisement"><div><span class="ad-label">A SMALL ANNOUNCEMENT</span><h2>Keep good things<br /><em>in good repair.</em></h2></div><div><p>Our repair counter is open to all—whether the mark on your tool says Ellery or not. Bring the broken, the curious, or simply a question.</p><a href="#contact">FIND THE REPAIR DESK ↗</a></div><span class="ad-star" aria-hidden="true">✳</span></section>
+
+				<footer id="contact"><div class="footer-brand">The Ellery Chronicle<small>AN ARCHIVE OF WORK &amp; PEOPLE</small></div><p>Have a story, a photograph, or a correction for the record?<br /><a href="mailto:archive@ellery.example">Write to the archive desk →</a></p><div class="copyright">© 2000 ELLERY &amp; COMPANY · PRINTED WITH CARE IN CALDER<br />THIS EDITION IS PART OF AN ONGOING COMPANY HISTORY.</div></footer>
+			</main>
+		</div>
+	</body>
+</html>
+
+<script>
+	const layoutButtons = document.querySelectorAll<HTMLButtonElement>('[data-layout]');
+	layoutButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const full = button.dataset.layout === 'full';
+		document.body.classList.toggle('is-fullscreen', full);
+		layoutButtons.forEach((option) => option.setAttribute('aria-pressed', String(option === button)));
+		});
+	});
+</script>
+
+<style>
+	:root{font-family:'Source Serif 4',Georgia,serif;color:#26231e;background:#e8e1d3;font-synthesis:none;--ink:#26231e;--red:#9f3828;--paper:#f5f0e5;--rule:#c9c0af;--muted:#726b60}
+	*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:24px}.paper{max-width:1180px;margin:auto;background:var(--paper);padding:0 56px;box-shadow:0 12px 48px #4035211c}.utility,.edition-line,.nav,.byline,.ad-label,.section-heading>span,.year span,.record-card dt,.copyright,.masthead-note,.eyebrow,.ticker span{font-family:'DM Mono',monospace;letter-spacing:.11em}.utility{height:40px;border-bottom:1px solid var(--ink);display:flex;align-items:center;justify-content:space-between;font-size:9px;color:var(--muted)}
+	.masthead{text-align:center;padding:25px 0 22px}.eyebrow{font-size:9px;text-transform:uppercase;color:var(--red);margin:0 0 5px}.wordmark{font-family:'Playfair Display',Georgia,serif;text-decoration:none;color:var(--ink);font-size:clamp(44px,7vw,80px);font-weight:700;letter-spacing:-.06em;line-height:1}.masthead-note{font-size:9px;margin:12px 0 0;color:var(--muted)}.nav{display:flex;justify-content:center;gap:clamp(16px,4vw,48px);border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:12px 0;font-size:10px;text-transform:uppercase}.nav a{color:var(--ink);text-decoration:none}.nav a:hover,.read-link:hover,footer a:hover{color:var(--red)}.edition-line{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--rule);font-size:8px;color:var(--muted)}
+	.lead-grid{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:42px;padding:38px 0 32px;border-bottom:3px double var(--ink)}.kicker{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--red);font-size:9px}.lead-copy h1,.section-heading h2,.record-copy h2,.bottom-ad h2{font-family:'Playfair Display',Georgia,serif;letter-spacing:-.045em}.lead-copy h1{font-size:clamp(48px,7vw,82px);line-height:.98;margin:13px 0 18px}.lead-copy h1 em,.record-copy h2 em,.bottom-ad h2 em{color:var(--red);font-weight:600}.dek{font-size:20px;line-height:1.45;max-width:650px;margin:0 0 20px}.byline{display:flex;gap:20px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:9px 0;margin:20px 0 17px;font-size:8px;color:var(--muted)}.body-copy{font-size:15px;line-height:1.8;max-width:690px;margin:0 0 13px}.read-link{display:inline-flex;gap:18px;align-items:center;margin-top:12px;color:var(--ink);font-family:'DM Mono',monospace;font-size:10px;text-decoration:none;text-transform:uppercase;letter-spacing:.06em}.read-link span{font-size:18px;color:var(--red)}
+	.ad{position:relative;text-align:center;border:1px solid var(--ink);padding:14px;background:#eee7d8}.ad-label{display:block;font-size:8px;color:var(--muted)}.ad-tall{padding:15px 14px 18px;border:3px double var(--ink)}.ornament{font-size:32px;margin:13px 0 0;color:var(--red)}.ad h2{font-family:'Playfair Display',serif;font-size:24px;line-height:1.05;margin:7px 0}.ad-tall>p:not(.ornament){font-size:13px;line-height:1.5;margin:10px 0}.ad a,.bottom-ad a{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.07em;color:var(--red);text-decoration:none}.ad small{display:block;border-top:1px solid var(--rule);margin-top:12px;padding-top:8px;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.09em;color:var(--muted)}.archive-note{display:flex;gap:12px;align-items:center;margin-top:19px}.stamp{border:1px solid var(--red);color:var(--red);transform:rotate(-7deg);padding:7px;font:8px/1.5 'DM Mono',monospace;text-align:center;flex:none}.archive-note p{font-size:11px;line-height:1.45;color:var(--muted)}
+	.ticker{display:grid;grid-template-columns:repeat(4,1fr);padding:17px 0 20px;border-bottom:1px solid var(--ink);text-align:center}.ticker div+div{border-left:1px solid var(--rule)}.ticker strong{display:block;font-family:'Playfair Display',serif;font-size:28px;color:var(--red)}.ticker span{font-size:7px;color:var(--muted)}.timeline-section{padding:43px 0 45px;border-bottom:3px double var(--ink)}.section-heading{text-align:center;margin-bottom:28px}.section-heading>span{font-size:8px;color:var(--red)}.section-heading h2{font-size:38px;margin:5px 0}.section-heading>p{font-size:13px;color:var(--muted);margin:0}.timeline-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:50px}.milestone{display:grid;grid-template-columns:92px 1fr;gap:20px;border-top:1px solid var(--rule);padding:17px 0}.year{font-family:'Playfair Display',serif;font-size:25px;color:var(--red)}.year span{display:block;font-size:7px;color:var(--muted);margin-top:4px}.milestone h3{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 5px}.milestone p{font-size:13px;line-height:1.65;color:#514b42;margin:0}.side-ads{display:flex;flex-direction:column;gap:18px}.ad-box{padding:12px}.ad-box h3{font-family:'Playfair Display',serif;font-size:19px;line-height:1.15;margin:15px 0 5px}.ad-box h3 em{font-size:13px;font-weight:600}.ad-box>p{font-size:11px;margin:4px}.compass{width:72px;height:72px;border:1px solid var(--ink);border-radius:50%;margin:12px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;font:9px 'DM Mono',monospace;line-height:1.1}.compass span{font-size:24px;color:var(--red)}.quote-ad{border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:14px 8px;text-align:center}.quote-ad p{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;margin:13px 0}.quote-ad small{font:7px 'DM Mono',monospace;color:var(--muted)}
+	.principles{margin:0 -56px;padding:37px 56px 43px;background:#292720;color:var(--paper)}.light-heading{margin-bottom:24px}.light-heading h2{font-size:34px;margin-bottom:0}.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.principle-grid article{border-top:1px solid #777064;padding-top:13px}.principle-number{font:8px 'DM Mono',monospace;color:#d3946d}.principle-grid h3{font:600 19px 'Playfair Display',serif;margin:9px 0}.principle-grid p{font-size:12px;line-height:1.7;color:#d0c8b9;margin:0}.record-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:60px;padding:42px 0;border-bottom:1px solid var(--ink)}.record-copy h2{font-size:40px;line-height:1.08;margin:8px 0 16px}.record-card{position:relative;border:3px double var(--ink);padding:17px 18px 90px;background:#eee7d8}.record-card dl{margin:15px 0 0}.record-card dl div{display:grid;grid-template-columns:90px 1fr;gap:10px;border-top:1px solid var(--rule);padding:8px 0}.record-card dt{font-size:8px;color:var(--muted);text-transform:uppercase}.record-card dd{font-size:12px;margin:0}.seal{position:absolute;right:17px;bottom:12px;width:62px;height:62px;border:1px solid var(--red);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--red);font:10px 'Playfair Display',serif;line-height:1}.seal span{font-size:17px}
+	.bottom-ad{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;margin:30px 0;padding:20px 35px;border:1px solid var(--red);background:#eee7d8}.bottom-ad h2{font-size:33px;line-height:1.04;margin:7px 0}.bottom-ad p{font-size:12px;line-height:1.6;margin:0 0 10px;max-width:380px}.ad-star{position:absolute;right:13px;top:8px;color:var(--red);font-size:19px}footer{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;padding:24px 0 20px;border-top:3px double var(--ink)}.footer-brand{font:700 22px 'Playfair Display',serif}.footer-brand small{display:block;margin-top:5px;font:7px 'DM Mono',monospace;letter-spacing:.1em;color:var(--muted)}footer p{font-size:11px;line-height:1.6;margin:0}footer a{color:var(--red);text-decoration:none}.copyright{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:10px;margin-top:5px;font-size:7px;line-height:1.7;color:var(--muted)}
+	@media(max-width:760px){body{padding:0}.paper{padding:0 22px}.utility{font-size:7px}.utility span:nth-child(2){display:none}.nav{justify-content:flex-start;overflow:auto;white-space:nowrap;gap:22px;font-size:9px}.edition-line{font-size:7px}.edition-line span:nth-child(2){display:none}.lead-grid{grid-template-columns:1fr;gap:25px}.lead-rail{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}.archive-note{margin-top:0;align-self:center}.timeline-layout{grid-template-columns:1fr;gap:25px}.side-ads{display:grid;grid-template-columns:1fr 1fr}.principles{margin:0 -22px;padding:32px 22px}.principle-grid{gap:17px}.record-grid{gap:25px}.record-card dl div{grid-template-columns:70px 1fr}.bottom-ad{padding:18px;gap:20px}}
+	@media(max-width:520px){.utility span:last-child{font-size:6px}.masthead{padding:21px 0 18px}.masthead-note{font-size:7px}.lead-copy h1{font-size:51px}.dek{font-size:17px}.byline{font-size:7px;gap:10px}.body-copy{font-size:14px}.lead-rail{grid-template-columns:1fr 1fr}.ad-tall{padding:11px 8px}.ad h2{font-size:20px}.ad-tall>p:not(.ornament){font-size:11px}.archive-note{display:block}.stamp{display:inline-block}.archive-note p{font-size:10px}.ticker{grid-template-columns:1fr 1fr;row-gap:14px}.ticker div:nth-child(3){border-left:0}.timeline-section{padding:34px 0}.section-heading h2{font-size:31px}.milestone{grid-template-columns:63px 1fr;gap:12px}.year{font-size:21px}.milestone h3{font-size:18px}.milestone p{font-size:12px}.side-ads{gap:10px}.ad-box h3{font-size:15px}.quote-ad p{font-size:15px}.principle-grid{grid-template-columns:1fr;gap:16px}.principle-grid article{padding-top:10px}.principle-grid h3{margin:5px 0}.record-grid{grid-template-columns:1fr;padding:32px 0;gap:20px}.record-copy h2{font-size:35px}.record-card{max-width:360px}.bottom-ad{grid-template-columns:1fr;gap:12px}.bottom-ad h2{font-size:30px}footer{grid-template-columns:1fr;gap:12px}.copyright{grid-column:auto}}
+	.view-controls{position:fixed;z-index:10;right:18px;bottom:18px;display:flex;align-items:center;gap:5px;padding:7px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 3px 14px #40352126;font:8px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+	.view-controls>span{padding:0 5px;color:var(--muted)}
+	.view-controls button{border:1px solid transparent;background:transparent;color:var(--ink);padding:7px 9px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+	.view-controls button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+	.view-controls button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+	body.is-fullscreen{padding:0;background:var(--paper)}
+	body.is-fullscreen .paper{width:100%;max-width:none;min-height:100vh;padding:0 clamp(24px,6vw,100px);box-shadow:none}
+	body.is-fullscreen .principles{margin:0 calc(-1 * clamp(24px,6vw,100px));padding:37px clamp(24px,6vw,100px) 43px}
+	body.is-fullscreen .lead-grid{grid-template-columns:minmax(0,1fr) minmax(235px,20vw);gap:clamp(42px,6vw,90px)}
+	body.is-fullscreen .timeline-layout{grid-template-columns:minmax(0,1fr) minmax(250px,22vw);gap:clamp(50px,7vw,100px)}
+	body.is-fullscreen .body-copy{max-width:850px}
+	@media(max-width:760px){body.is-fullscreen .paper{padding:0 22px}body.is-fullscreen .principles{margin:0 -22px;padding:32px 22px}body.is-fullscreen .lead-grid,body.is-fullscreen .timeline-layout{grid-template-columns:1fr;gap:25px}}
+	@media print{.view-controls{display:none}body{padding:0}.paper{max-width:none;box-shadow:none}}
+</style>

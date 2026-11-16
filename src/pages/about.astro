@@ -1,0 +1,101 @@
+---
+const curiosities = [
+	{ number: "01", title: "A pocket of calm", text: "A small reminder that not everything needs to be optimized." },
+	{ number: "02", title: "A good question", text: "What would this look like if it were a little more fun?" },
+	{ number: "03", title: "A tiny beginning", text: "Most lovely things start as a thought someone almost ignored." },
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#f6f2e9" />
+		<title>A little corner of the internet</title>
+		<meta name="description" content="A tiny collection of curiosities and good questions." />
+	</head>
+	<body>
+		<main class="page">
+			<header class="topline"><a href="#home" class="mark" aria-label="Go to the top">✳</a><span>THE SMALL THINGS CLUB</span><span class="issue">ISSUE Nº 01</span></header>
+
+			<section class="intro" id="home" aria-labelledby="headline">
+				<div class="sun" aria-hidden="true"><span>✦</span></div>
+				<p class="eyebrow">A PLACE FOR THE IN-BETWEEN</p>
+				<h1 id="headline">Not everything<br />needs to <em>mean</em><br />something.</h1>
+				<p class="lede">Sometimes it’s nice to simply notice a thing, follow a thought, and see where the afternoon goes.</p>
+				<a class="nudge" href="#curiosities">Wander a little <span aria-hidden="true">↓</span></a>
+			</section>
+
+			<section class="collection" id="curiosities" aria-labelledby="collection-title">
+				<div class="section-heading"><p class="eyebrow">A VERY SHORT COLLECTION</p><h2 id="collection-title">Things worth keeping</h2></div>
+				<div class="cards">
+					{curiosities.map((item) => (
+						<article class="card">
+							<span class="card-number">{item.number} / 03</span>
+							<h3>{item.title}</h3>
+							<p>{item.text}</p>
+							<span class="spark" aria-hidden="true">✳</span>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<footer><span>Made for a slower scroll.</span><span aria-hidden="true">☼</span><a href="#home">Back to the beginning ↑</a></footer>
+		</main>
+	</body>
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+	:global(*) { box-sizing: border-box; }
+	:global(html) { scroll-behavior: smooth; }
+	:global(body) { margin: 0; background: #f6f2e9; color: #23332b; font-family: 'DM Sans', sans-serif; }
+	.page { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+	.topline { height: 76px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #dcd8ce; color: #68766b; font: 11px 'DM Mono', monospace; letter-spacing: .12em; }
+	.mark { color: #ee7958; font-size: 26px; text-decoration: none; transition: transform .25s ease; }
+	.mark:hover { transform: rotate(45deg); }
+	.issue { color: #a4a295; }
+	.intro { min-height: 570px; padding: 82px 0 70px; text-align: center; position: relative; display: flex; flex-direction: column; align-items: center; }
+	.sun { position: absolute; width: 124px; height: 124px; border-radius: 50%; background: #f3c96b; top: 76px; right: 12%; display: grid; place-items: center; color: #fff8df; font-size: 40px; animation: float 5s ease-in-out infinite; }
+	.eyebrow { color: #758175; font: 10px 'DM Mono', monospace; letter-spacing: .16em; }
+	.intro .eyebrow { margin: 13px 0 22px; }
+	h1 { margin: 0; font: 600 clamp(56px, 8vw, 94px)/.98 'Playfair Display', Georgia, serif; letter-spacing: -.055em; }
+	h1 em { color: #e77a5b; font-weight: 600; }
+	.lede { max-width: 370px; margin: 25px 0 23px; color: #6e766d; font-size: 15px; line-height: 1.8; }
+	.nudge { color: #34493b; font: 12px 'DM Mono', monospace; text-decoration: none; border-bottom: 1px solid #aeb9a8; padding-bottom: 7px; }
+	.nudge span { display: inline-block; margin-left: 9px; transition: transform .2s ease; }
+	.nudge:hover span { transform: translateY(3px); }
+	.collection { padding: 60px 0 84px; border-top: 1px solid #dcd8ce; }
+	.section-heading { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 25px; }
+	.section-heading .eyebrow { margin: 0; }
+	h2 { margin: 0; font: 600 27px 'Playfair Display', Georgia, serif; letter-spacing: -.03em; }
+	.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+	.card { position: relative; min-height: 204px; padding: 23px; border: 1px solid #ded9cc; border-radius: 4px; background: rgba(255,255,255,.28); transition: transform .2s ease, background .2s ease; }
+	.card:hover { transform: translateY(-4px); background: #fbf8f0; }
+	.card-number { color: #9a9d8e; font: 10px 'DM Mono', monospace; letter-spacing: .1em; }
+	h3 { margin: 28px 0 8px; font: 600 20px 'Playfair Display', Georgia, serif; }
+	.card p { max-width: 240px; margin: 0; color: #72796f; font-size: 13px; line-height: 1.65; }
+	.spark { position: absolute; right: 20px; top: 19px; color: #e77a5b; font-size: 16px; }
+	footer { min-height: 67px; border-top: 1px solid #dcd8ce; display: flex; align-items: center; justify-content: space-between; color: #81877d; font: 11px 'DM Mono', monospace; }
+	footer span:nth-child(2) { color: #e77a5b; font-size: 18px; }
+	footer a { color: #536253; text-decoration: none; }
+	footer a:hover { color: #e77a5b; }
+	@keyframes float { 0%, 100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+	@media (max-width: 700px) {
+		.page { width: min(100% - 34px, 520px); }
+		.topline { height: 62px; font-size: 9px; }
+		.intro { min-height: 530px; justify-content: center; padding: 78px 0 45px; }
+		.sun { width: 75px; height: 75px; top: 34px; right: 5%; font-size: 26px; }
+		.section-heading { display: block; }
+		h2 { margin-top: 10px; }
+		.cards { grid-template-columns: 1fr; }
+		.card { min-height: 174px; }
+		h3 { margin-top: 22px; }
+		footer { gap: 12px; font-size: 9px; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		:global(html) { scroll-behavior: auto; }
+		*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+	}
+</style>
