@@ -1,0 +1,61 @@
+<section id="navigation">
+    <h2 class="heading">Daftar Halaman</h2>
+
+    <div class="container">
+        <a class="page-button" href="/about">About</a>
+        <a class="page-button" href="/">Profil</a>
+        <a class="page-button" href="/tes">Kontak</a>
+    </div>
+</section>
+<style>
+    #navigation {
+        margin: 0;
+        padding: 2rem;
+        color: #172033;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .heading {
+        /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; */
+        margin: 0 0 1.25rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        letter-spacing: -0.03em;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75rem;
+        max-width: 720px;
+    }
+
+    .page-button {
+        display: block;
+        padding: 0.9rem 1rem;
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 10px rgb(37 99 235 / 18%);
+        transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .page-button:hover,
+    .page-button:focus-visible {
+        box-shadow: 0 7px 16px rgb(37 99 235 / 25%);
+        transform: translateY(-2px);
+    }
+
+    .page-button:focus-visible {
+        outline: 3px solid #93c5fd;
+        outline-offset: 3px;
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding: 1.25rem;
+        }
+    }
+</style>
